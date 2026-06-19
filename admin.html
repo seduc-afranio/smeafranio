@@ -11,19 +11,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary: #009933;
-      --primary-dark: #007a29;
+      --primary:       #009933;
+      --primary-dark:  #007a29;
       --primary-light: #e6f9ed;
-      --danger: #dc2626;
-      --danger-light: #fee2e2;
-      --white: #ffffff;
-      --gray-900: #111827;
-      --gray-700: #374151;
-      --gray-500: #6b7280;
-      --gray-300: #d1d5db;
-      --gray-100: #f3f4f6;
-      --shadow: 0 4px 12px rgba(0,0,0,.10);
-      --radius: .75rem;
+      --danger:        #dc2626;
+      --danger-light:  #fee2e2;
+      --warning:       #d97706;
+      --warning-light: #fef3c7;
+      --white:         #ffffff;
+      --gray-900:      #111827;
+      --gray-700:      #374151;
+      --gray-500:      #6b7280;
+      --gray-300:      #d1d5db;
+      --gray-100:      #f3f4f6;
+      --shadow:        0 4px 12px rgba(0,0,0,.10);
+      --radius:        .75rem;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Open Sans', system-ui, sans-serif; background: var(--gray-100); color: var(--gray-900); min-height: 100vh; }
@@ -45,62 +47,46 @@
       max-width: 400px;
       box-shadow: 0 20px 50px rgba(0,0,0,.25);
     }
-    .login-logo {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--gray-300);
-    }
+    .login-logo { display: flex; align-items: center; gap: .75rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--gray-300); }
     .login-logo img { height: 50px; width: auto; }
-    .login-logo-text { font-family: 'Poppins', sans-serif; }
-    .login-logo-text span { display: block; font-size: .7rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: .06em; }
-    .login-logo-text strong { display: block; font-size: .95rem; font-weight: 700; color: var(--primary-dark); }
+    .login-logo-text span  { display: block; font-size: .7rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: .06em; font-family: 'Poppins', sans-serif; }
+    .login-logo-text strong { display: block; font-size: .95rem; font-weight: 700; color: var(--primary-dark); font-family: 'Poppins', sans-serif; }
     .login-box h1 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: .35rem; }
     .login-box p  { font-size: .875rem; color: var(--gray-500); margin-bottom: 1.75rem; }
 
     label { display: block; font-size: .82rem; font-weight: 600; color: var(--gray-700); margin-bottom: .4rem; text-transform: uppercase; letter-spacing: .04em; }
     input[type="password"], input[type="text"], select, textarea {
-      width: 100%;
-      padding: .75rem 1rem;
-      border: 1.5px solid var(--gray-300);
-      border-radius: .5rem;
-      font-size: .9rem;
-      font-family: inherit;
-      color: var(--gray-900);
-      background: var(--white);
-      transition: border-color .2s;
+      width: 100%; padding: .75rem 1rem; border: 1.5px solid var(--gray-300);
+      border-radius: .5rem; font-size: .9rem; font-family: inherit;
+      color: var(--gray-900); background: var(--white); transition: border-color .2s;
     }
     input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); }
     textarea { resize: vertical; min-height: 90px; }
 
     .error-msg { display: none; font-size: .82rem; color: var(--danger); background: var(--danger-light); padding: .6rem .9rem; border-radius: .5rem; margin-top: .75rem; }
 
-    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: .5rem; font-size: .9rem; font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer; border: none; transition: .2s; }
-    .btn-green { background: var(--primary); color: var(--white); width: 100%; justify-content: center; margin-top: 1rem; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: .5rem; font-size: .9rem; font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer; border: none; transition: .2s; text-decoration: none; }
+    .btn-green  { background: var(--primary); color: var(--white); }
     .btn-green:hover { background: var(--primary-dark); }
+    .btn-green:disabled { opacity: .6; cursor: not-allowed; }
+    .btn-publish { background: #1d4ed8; color: var(--white); font-size: 1rem; padding: .9rem 2rem; }
+    .btn-publish:hover:not(:disabled) { background: #1e40af; }
+    .btn-publish:disabled { opacity: .6; cursor: not-allowed; }
     .btn-outline-green { background: var(--white); color: var(--primary); border: 1.5px solid var(--primary); }
     .btn-outline-green:hover { background: var(--primary-light); }
     .btn-outline-gray  { background: var(--white); color: var(--gray-700); border: 1.5px solid var(--gray-300); }
-    .btn-outline-gray:hover  { background: var(--gray-100); }
+    .btn-outline-gray:hover { background: var(--gray-100); }
     .btn-danger { background: var(--danger); color: var(--white); }
     .btn-danger:hover { background: #b91c1c; }
+    .btn-full { width: 100%; justify-content: center; margin-top: 1rem; }
 
     /* ── ADMIN LAYOUT ── */
     #adminSection { display: none; }
 
     .admin-topbar {
-      background: white;
-      border-bottom: 1px solid var(--gray-300);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow);
+      background: white; border-bottom: 1px solid var(--gray-300);
+      padding: 1rem 2rem; display: flex; align-items: center;
+      justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow);
     }
     .topbar-logo { display: flex; align-items: center; gap: .75rem; }
     .topbar-logo img { height: 40px; width: auto; }
@@ -108,43 +94,50 @@
 
     .admin-body { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
 
-    .admin-header {
+    /* ── BANNER TOKEN ── */
+    .token-banner {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--warning-light);
+      border: 1.5px solid #fcd34d;
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .token-banner i { color: var(--warning); font-size: 1.3rem; flex-shrink: 0; }
+    .token-banner p { font-size: .88rem; color: var(--gray-700); }
+    .token-banner strong { color: var(--gray-900); }
+
+    /* ── PUBLISH BAR ── */
+    .publish-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1rem;
+      background: var(--white);
+      border: 1.5px solid #bfdbfe;
+      border-radius: var(--radius);
+      padding: 1rem 1.5rem;
       margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(29,78,216,.08);
     }
+    .publish-bar-text h3 { font-family: 'Poppins', sans-serif; font-size: .95rem; font-weight: 700; color: #1d4ed8; }
+    .publish-bar-text p  { font-size: .8rem; color: var(--gray-500); margin-top: .15rem; }
+
+    /* ── HEADER ── */
+    .admin-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
     .admin-header h2 { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; }
-    .admin-header p  { font-size: .85rem; color: var(--gray-500); }
+    .admin-header-sub { font-size: .85rem; color: var(--gray-500); }
     .header-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
 
-    .admin-card {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      margin-bottom: 1rem;
-      transition: box-shadow .2s;
-    }
+    /* ── CARDS ── */
+    .admin-card { background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1rem; transition: box-shadow .2s; }
     .admin-card:hover { box-shadow: var(--shadow); }
-    .admin-card-icon {
-      flex-shrink: 0;
-      width: 50px; height: 50px;
-      background: var(--primary-light);
-      color: var(--primary);
-      border-radius: .6rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-    }
+    .admin-card-icon { flex-shrink: 0; width: 50px; height: 50px; background: var(--primary-light); color: var(--primary); border-radius: .6rem; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; }
     .admin-card-info { flex: 1; min-width: 0; }
-    .admin-card-cat  { display: inline-block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--primary); background: var(--primary-light); padding: .2rem .6rem; border-radius: 2rem; margin-bottom: .3rem; }
+    .admin-card-cat   { display: inline-block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--primary); background: var(--primary-light); padding: .2rem .6rem; border-radius: 2rem; margin-bottom: .3rem; }
     .admin-card-title { font-family: 'Poppins', sans-serif; font-size: .95rem; font-weight: 700; margin-bottom: .25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .admin-card-desc  { font-size: .8rem; color: var(--gray-500); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .admin-card-actions { display: flex; gap: .5rem; flex-shrink: 0; }
@@ -157,33 +150,10 @@
     .empty-state i { font-size: 2.5rem; display: block; margin-bottom: 1rem; color: var(--gray-300); }
 
     /* ── MODAL ── */
-    .modal-backdrop {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.45);
-      z-index: 500;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      backdrop-filter: blur(3px);
-    }
+    .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 500; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(3px); }
     .modal-backdrop.open { display: flex; }
-    .modal {
-      background: var(--white);
-      border-radius: 1rem;
-      width: 100%;
-      max-width: 560px;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    .modal-header {
-      padding: 1.5rem;
-      border-bottom: 1px solid var(--gray-300);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    .modal { background: var(--white); border-radius: 1rem; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; }
+    .modal-header { padding: 1.5rem; border-bottom: 1px solid var(--gray-300); display: flex; align-items: center; justify-content: space-between; }
     .modal-header h3 { font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 700; }
     .modal-close { background: none; border: none; cursor: pointer; color: var(--gray-500); font-size: 1.2rem; transition: color .2s; }
     .modal-close:hover { color: var(--gray-900); }
@@ -192,67 +162,43 @@
 
     .icon-field-wrap { display: flex; gap: .75rem; align-items: center; }
     .icon-field-wrap input { flex: 1; }
-    .icon-preview-box {
-      flex-shrink: 0;
-      width: 44px; height: 44px;
-      background: var(--primary-light);
-      color: var(--primary);
-      border-radius: .5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      border: 1.5px solid var(--gray-300);
-    }
+    .icon-preview-box { flex-shrink: 0; width: 44px; height: 44px; background: var(--primary-light); color: var(--primary); border-radius: .5rem; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; border: 1.5px solid var(--gray-300); }
+    .icon-hint { font-size: .78rem; color: var(--gray-500); margin-top: .25rem; }
+    .icon-hint a { color: var(--primary); }
 
-    /* ── SETTINGS PANEL ── */
-    .settings-section {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-    .settings-section h3 { font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid var(--gray-300); display: flex; align-items: center; gap: .5rem; }
-
+    /* ── SETTINGS ── */
+    .settings-card { background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius); padding: 1.5rem; margin-top: 2rem; }
+    .settings-card h3 { font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid var(--gray-300); display: flex; align-items: center; gap: .5rem; }
+    .settings-form { display: grid; gap: 1rem; max-width: 480px; }
+    .token-row { display: flex; gap: .5rem; }
+    .token-row input { flex: 1; }
     .pass-msg { font-size: .82rem; margin-top: .5rem; min-height: 1.2rem; }
 
+    .how-to-box { background: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: var(--radius); padding: 1.25rem; margin-top: 1rem; font-size: .85rem; line-height: 1.8; color: var(--gray-700); }
+    .how-to-box strong { color: #0369a1; }
+    .how-to-box ol { padding-left: 1.25rem; }
+    .how-to-box code { background: #e0f2fe; color: #0369a1; padding: .1rem .4rem; border-radius: .25rem; font-size: .8rem; }
+
     /* ── TOAST ── */
-    .toast {
-      position: fixed;
-      bottom: 2rem; right: 2rem;
-      background: var(--gray-900);
-      color: var(--white);
-      padding: .85rem 1.5rem;
-      border-radius: .6rem;
-      font-size: .9rem;
-      font-weight: 500;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity .3s, transform .3s;
-      z-index: 9999;
-      pointer-events: none;
-    }
+    .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--gray-900); color: var(--white); padding: .85rem 1.5rem; border-radius: .6rem; font-size: .9rem; font-weight: 500; opacity: 0; transform: translateY(10px); transition: opacity .3s, transform .3s; z-index: 9999; pointer-events: none; max-width: 380px; }
     .toast.show { opacity: 1; transform: translateY(0); }
     .toast-success { background: var(--primary); }
     .toast-error   { background: var(--danger); }
 
-    .icon-hint { font-size: .78rem; color: var(--gray-500); margin-top: .25rem; }
-    .icon-hint a { color: var(--primary); }
-
+    /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .admin-topbar { padding: 1rem; }
       .admin-card { flex-wrap: wrap; }
-      .admin-card-title { white-space: normal; }
-      .admin-card-desc  { white-space: normal; }
+      .admin-card-title, .admin-card-desc { white-space: normal; }
       .header-actions { width: 100%; }
-      .header-actions .btn { flex: 1; justify-content: center; }
+      .header-actions .btn { flex: 1; justify-content: center; font-size: .8rem; padding: .65rem 1rem; }
+      .publish-bar { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── LOGIN ── -->
+<!-- ══════════ LOGIN ══════════ -->
 <section id="loginSection">
   <div class="login-box">
     <div class="login-logo">
@@ -270,60 +216,107 @@
         <input type="password" id="adminPassword" placeholder="Digite sua senha" autocomplete="current-password" required />
       </div>
       <div id="loginError" class="error-msg"></div>
-      <button type="submit" class="btn btn-green">
-        <i class="fa-solid fa-right-to-bracket"></i>
-        Entrar
+      <button type="submit" class="btn btn-green btn-full">
+        <i class="fa-solid fa-right-to-bracket"></i> Entrar
       </button>
     </form>
   </div>
 </section>
 
-<!-- ── ADMIN PANEL ── -->
+<!-- ══════════ ADMIN ══════════ -->
 <div id="adminSection">
+
   <div class="admin-topbar">
     <div class="topbar-logo">
       <img src="logo.png" alt="Logo" />
       <span>Painel — SME Afrânio</span>
     </div>
-    <button id="logoutBtn" class="btn btn-outline-gray">
-      <i class="fa-solid fa-right-from-bracket"></i>
-      Sair
-    </button>
+    <div style="display:flex;gap:.75rem;align-items:center;">
+      <a href="index.html" class="btn btn-outline-gray" target="_blank" style="padding:.55rem 1rem;font-size:.82rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Site
+      </a>
+      <button id="logoutBtn" class="btn btn-outline-gray" style="padding:.55rem 1rem;font-size:.82rem;">
+        <i class="fa-solid fa-right-from-bracket"></i> Sair
+      </button>
+    </div>
   </div>
 
   <div class="admin-body">
+
+    <!-- AVISO: token não configurado -->
+    <div id="tokenStatus" class="token-banner" style="display:none;">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <p><strong>Token do GitHub não configurado.</strong> Você pode criar e editar projetos, mas o botão "Publicar no Site" não funcionará até configurar o token abaixo.</p>
+    </div>
+
+    <!-- BARRA DE PUBLICAR -->
+    <div class="publish-bar">
+      <div class="publish-bar-text">
+        <h3><i class="fa-solid fa-globe"></i> Publicar no Site</h3>
+        <p>Salva os projetos no GitHub e atualiza o site para <strong>todos os visitantes</strong> em instantes.</p>
+      </div>
+      <button class="btn btn-publish" id="btnPublish">
+        <i class="fa-solid fa-cloud-arrow-up"></i> Publicar no Site
+      </button>
+    </div>
+
+    <!-- CABEÇALHO + AÇÕES -->
     <div class="admin-header">
       <div>
-        <h2>Gerenciar Projetos</h2>
-        <p id="projectsCount">0</p> projetos cadastrados
+        <h2>Projetos</h2>
+        <p class="admin-header-sub" id="projectsCount">0 projetos</p>
       </div>
       <div class="header-actions">
-        <button class="btn btn-outline-gray" id="btnImport">
-          <i class="fa-solid fa-file-import"></i> Importar JSON
-        </button>
-        <button class="btn btn-outline-green" id="btnExport">
-          <i class="fa-solid fa-file-export"></i> Exportar JSON
-        </button>
         <button class="btn btn-green" id="btnNewProject">
           <i class="fa-solid fa-plus"></i> Novo Projeto
         </button>
       </div>
     </div>
-    <input type="file" id="importInput" accept=".json" style="display:none" />
 
     <div id="projectsList"></div>
 
-    <!-- SETTINGS -->
-    <div class="settings-section">
+    <!-- CONFIG: TOKEN GITHUB -->
+    <div class="settings-card">
+      <h3><i class="fa-brands fa-github"></i> Token do GitHub (necessário para publicar)</h3>
+      <div class="settings-form">
+        <div>
+          <label for="tokenInput">Personal Access Token</label>
+          <div class="token-row">
+            <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
+            <button class="btn btn-outline-green" id="btnSaveToken" type="button">Salvar</button>
+            <button class="btn btn-outline-gray" id="btnRemoveToken" type="button" title="Remover token">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+          <p style="font-size:.78rem;color:var(--gray-500);margin-top:.4rem;">
+            O token é salvo apenas neste navegador, nunca no servidor.
+          </p>
+        </div>
+      </div>
+
+      <div class="how-to-box">
+        <strong>Como gerar o Token do GitHub:</strong>
+        <ol>
+          <li>Acesse <strong>github.com</strong> e faça login na conta <code>seduc-afranio</code></li>
+          <li>Vá em <strong>Settings → Developer Settings → Personal Access Tokens → Tokens (classic)</strong></li>
+          <li>Clique em <strong>"Generate new token (classic)"</strong></li>
+          <li>Dê um nome (ex: <code>SME-Admin</code>), selecione o escopo <code>repo</code> e clique em <strong>Generate token</strong></li>
+          <li>Copie o token gerado e cole no campo acima</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- CONFIG: ALTERAR SENHA -->
+    <div class="settings-card">
       <h3><i class="fa-solid fa-lock"></i> Alterar Senha de Acesso</h3>
-      <form id="changePassForm" style="display:grid;gap:1rem;max-width:420px;">
+      <form id="changePassForm" class="settings-form">
         <div>
           <label for="cpCurrent">Senha atual</label>
           <input type="password" id="cpCurrent" placeholder="Senha atual" />
         </div>
         <div>
           <label for="cpNew">Nova senha</label>
-          <input type="password" id="cpNew" placeholder="Nova senha (mín. 8 caracteres)" />
+          <input type="password" id="cpNew" placeholder="Mínimo 8 caracteres" />
         </div>
         <div>
           <label for="cpConfirm">Confirmar nova senha</label>
@@ -337,10 +330,11 @@
         </div>
       </form>
     </div>
+
   </div>
 </div>
 
-<!-- ── MODAL PROJETO ── -->
+<!-- ══════════ MODAL PROJETO ══════════ -->
 <div class="modal-backdrop" id="modalBackdrop">
   <div class="modal">
     <div class="modal-header">
@@ -371,7 +365,7 @@
           </select>
         </div>
         <div>
-          <label for="fIcone">Classe do Ícone (Font Awesome) *</label>
+          <label for="fIcone">Ícone (Font Awesome) *</label>
           <div class="icon-field-wrap">
             <input type="text" id="fIcone" placeholder="fa-solid fa-flask" required />
             <div class="icon-preview-box">
@@ -379,15 +373,15 @@
             </div>
           </div>
           <p class="icon-hint">
-            Pesquise ícones em <a href="https://fontawesome.com/icons" target="_blank" rel="noopener">fontawesome.com/icons</a>
-            e cole a classe aqui. Ex: <code>fa-solid fa-book-open</code>
+            Pesquise em <a href="https://fontawesome.com/icons" target="_blank" rel="noopener">fontawesome.com/icons</a>
+            e cole a classe. Ex: <code style="background:#f3f4f6;padding:.1rem .3rem;border-radius:.25rem;font-size:.78rem;">fa-solid fa-book-open</code>
           </p>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-gray" id="btnCancelModal2" onclick="document.getElementById('btnCancelModal').click()">Cancelar</button>
+        <button type="button" class="btn btn-outline-gray" onclick="document.getElementById('btnCancelModal').click()">Cancelar</button>
         <button type="submit" class="btn btn-green">
-          <i class="fa-solid fa-floppy-disk"></i> Salvar Projeto
+          <i class="fa-solid fa-floppy-disk"></i> Salvar
         </button>
       </div>
     </form>

@@ -119,7 +119,7 @@
   <!-- Wave -->
   <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none"
        style="position:absolute;bottom:0;left:0;right:0;z-index:1;">
-    <path fill="#f0fdf4" d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/>
+    <path fill="#005c20" d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/>
   </svg>
 </section>
 
@@ -133,7 +133,7 @@
       <div class="secretary-photo-wrap fade-up">
         <div class="secretary-photo">
           <img src="foto-secretario.jpg" alt="Secretário Ricardo Araújo"
-               onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><i class=\'fa-solid fa-user\' style=\'font-size:4rem;color:var(--green-400)\'></i><p>Foto do Secretário</p></div>'" />
+               onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><i class=\'fa-solid fa-user\'></i><p>Adicione a foto: foto-secretario.jpg</p></div>'" />
         </div>
         <div class="secretary-badge-wrap">
           <strong>2026</strong>
@@ -560,19 +560,25 @@
         <ul>
           <li><a href="https://wa.me/5587981757728" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="#contato">Localização</a></li>
-          <li><a href="admin.html">Área Restrita</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
       <span>© 2026 Secretaria Municipal de Educação — Afrânio, PE. Todos os direitos reservados.</span>
-      <a href="admin.html">
-        <i class="fa-solid fa-lock"></i> Admin
-      </a>
     </div>
   </div>
 </footer>
+
+<!-- WhatsApp flutuante -->
+<a href="https://wa.me/5587981757728" class="fab-whatsapp" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Voltar ao topo -->
+<button class="fab-top" id="backToTop" aria-label="Voltar ao topo">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
 
 <script src="js/main.js"></script>
 </body>
