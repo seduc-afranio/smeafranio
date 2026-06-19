@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "titulo": "Laboratório Make nas Escolas — Mais Ciência nas Escolas",
+    "descricao": "Prototipagem, robótica e cultura maker chegam às escolas municipais de Afrânio. +Ciência, +Inovação, +Futuro para todos os estudantes da rede.",
+    "categoria": "Tecnologia",
+    "icone": "fa-solid fa-flask"
+  },
+  {
+    "id": 2,
+    "titulo": "Educação Inclusiva",
+    "descricao": "Projeto voltado ao atendimento especializado de alunos com necessidades especiais, garantindo equidade no aprendizado.",
+    "categoria": "Inclusão",
+    "icone": "fa-solid fa-hand-holding-heart"
+  },
+  {
+    "id": 3,
+    "titulo": "Olimpíadas Escolares de Afrânio",
+    "descricao": "Torneio esportivo municipal que incentiva a prática de esportes e a integração entre as escolas do município.",
+    "categoria": "Esporte",
+    "icone": "fa-solid fa-medal"
+  },
+  {
+    "id": 4,
+    "titulo": "Projeto Leitura Viva",
+    "descricao": "Iniciativa pedagógica que promove a leitura e o letramento através de bibliotecas itinerantes e círculos de leitura.",
+    "categoria": "Pedagógico",
+    "icone": "fa-solid fa-book-open"
+  },
+  {
+    "id": 5,
+    "titulo": "Festival Cultural das Escolas",
+    "descricao": "Celebração da cultura local com apresentações artísticas, exposições e mostras culturais produzidas pelos alunos.",
+    "categoria": "Cultura",
+    "icone": "fa-solid fa-masks-theater"
+  }
+]

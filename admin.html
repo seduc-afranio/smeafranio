@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Admin — SME Afrânio</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #009933;
+      --primary-dark: #007a29;
+      --primary-light: #e6f9ed;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --white: #ffffff;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-300: #d1d5db;
+      --gray-100: #f3f4f6;
+      --shadow: 0 4px 12px rgba(0,0,0,.10);
+      --radius: .75rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Open Sans', system-ui, sans-serif; background: var(--gray-100); color: var(--gray-900); min-height: 100vh; }
+
+    /* ── LOGIN ── */
+    #loginSection {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #003d15, #007a29, #009933);
+      padding: 1.5rem;
+    }
+    .login-box {
+      background: var(--white);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    }
+    .login-logo {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--gray-300);
+    }
+    .login-logo img { height: 50px; width: auto; }
+    .login-logo-text { font-family: 'Poppins', sans-serif; }
+    .login-logo-text span { display: block; font-size: .7rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: .06em; }
+    .login-logo-text strong { display: block; font-size: .95rem; font-weight: 700; color: var(--primary-dark); }
+    .login-box h1 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: .35rem; }
+    .login-box p  { font-size: .875rem; color: var(--gray-500); margin-bottom: 1.75rem; }
+
+    label { display: block; font-size: .82rem; font-weight: 600; color: var(--gray-700); margin-bottom: .4rem; text-transform: uppercase; letter-spacing: .04em; }
+    input[type="password"], input[type="text"], select, textarea {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1.5px solid var(--gray-300);
+      border-radius: .5rem;
+      font-size: .9rem;
+      font-family: inherit;
+      color: var(--gray-900);
+      background: var(--white);
+      transition: border-color .2s;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); }
+    textarea { resize: vertical; min-height: 90px; }
+
+    .error-msg { display: none; font-size: .82rem; color: var(--danger); background: var(--danger-light); padding: .6rem .9rem; border-radius: .5rem; margin-top: .75rem; }
+
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: .5rem; font-size: .9rem; font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer; border: none; transition: .2s; }
+    .btn-green { background: var(--primary); color: var(--white); width: 100%; justify-content: center; margin-top: 1rem; }
+    .btn-green:hover { background: var(--primary-dark); }
+    .btn-outline-green { background: var(--white); color: var(--primary); border: 1.5px solid var(--primary); }
+    .btn-outline-green:hover { background: var(--primary-light); }
+    .btn-outline-gray  { background: var(--white); color: var(--gray-700); border: 1.5px solid var(--gray-300); }
+    .btn-outline-gray:hover  { background: var(--gray-100); }
+    .btn-danger { background: var(--danger); color: var(--white); }
+    .btn-danger:hover { background: #b91c1c; }
+
+    /* ── ADMIN LAYOUT ── */
+    #adminSection { display: none; }
+
+    .admin-topbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-300);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .topbar-logo { display: flex; align-items: center; gap: .75rem; }
+    .topbar-logo img { height: 40px; width: auto; }
+    .topbar-logo span { font-family: 'Poppins', sans-serif; font-size: .9rem; font-weight: 700; color: var(--primary-dark); }
+
+    .admin-body { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    .admin-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .admin-header h2 { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; }
+    .admin-header p  { font-size: .85rem; color: var(--gray-500); }
+    .header-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+    .admin-card {
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1rem;
+      transition: box-shadow .2s;
+    }
+    .admin-card:hover { box-shadow: var(--shadow); }
+    .admin-card-icon {
+      flex-shrink: 0;
+      width: 50px; height: 50px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: .6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    .admin-card-info { flex: 1; min-width: 0; }
+    .admin-card-cat  { display: inline-block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--primary); background: var(--primary-light); padding: .2rem .6rem; border-radius: 2rem; margin-bottom: .3rem; }
+    .admin-card-title { font-family: 'Poppins', sans-serif; font-size: .95rem; font-weight: 700; margin-bottom: .25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .admin-card-desc  { font-size: .8rem; color: var(--gray-500); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .admin-card-actions { display: flex; gap: .5rem; flex-shrink: 0; }
+    .btn-edit { background: #eff6ff; color: #2563eb; border: none; border-radius: .4rem; width: 36px; height: 36px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: .9rem; transition: .2s; }
+    .btn-edit:hover { background: #dbeafe; }
+    .btn-del  { background: var(--danger-light); color: var(--danger); border: none; border-radius: .4rem; width: 36px; height: 36px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: .9rem; transition: .2s; }
+    .btn-del:hover { background: #fecaca; }
+
+    .empty-state { text-align: center; padding: 4rem 2rem; color: var(--gray-500); background: var(--white); border-radius: var(--radius); border: 1.5px dashed var(--gray-300); }
+    .empty-state i { font-size: 2.5rem; display: block; margin-bottom: 1rem; color: var(--gray-300); }
+
+    /* ── MODAL ── */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      backdrop-filter: blur(3px);
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: var(--white);
+      border-radius: 1rem;
+      width: 100%;
+      max-width: 560px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-300);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modal-header h3 { font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 700; }
+    .modal-close { background: none; border: none; cursor: pointer; color: var(--gray-500); font-size: 1.2rem; transition: color .2s; }
+    .modal-close:hover { color: var(--gray-900); }
+    .modal-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.1rem; }
+    .modal-footer { padding: 1.25rem 1.5rem; border-top: 1px solid var(--gray-300); display: flex; justify-content: flex-end; gap: .75rem; }
+
+    .icon-field-wrap { display: flex; gap: .75rem; align-items: center; }
+    .icon-field-wrap input { flex: 1; }
+    .icon-preview-box {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: .5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      border: 1.5px solid var(--gray-300);
+    }
+
+    /* ── SETTINGS PANEL ── */
+    .settings-section {
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .settings-section h3 { font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid var(--gray-300); display: flex; align-items: center; gap: .5rem; }
+
+    .pass-msg { font-size: .82rem; margin-top: .5rem; min-height: 1.2rem; }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      background: var(--gray-900);
+      color: var(--white);
+      padding: .85rem 1.5rem;
+      border-radius: .6rem;
+      font-size: .9rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .3s, transform .3s;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast-success { background: var(--primary); }
+    .toast-error   { background: var(--danger); }
+
+    .icon-hint { font-size: .78rem; color: var(--gray-500); margin-top: .25rem; }
+    .icon-hint a { color: var(--primary); }
+
+    @media (max-width: 600px) {
+      .admin-topbar { padding: 1rem; }
+      .admin-card { flex-wrap: wrap; }
+      .admin-card-title { white-space: normal; }
+      .admin-card-desc  { white-space: normal; }
+      .header-actions { width: 100%; }
+      .header-actions .btn { flex: 1; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── LOGIN ── -->
+<section id="loginSection">
+  <div class="login-box">
+    <div class="login-logo">
+      <img src="logo.png" alt="Logo SME Afrânio" />
+      <div class="login-logo-text">
+        <span>Secretaria Municipal de Educação</span>
+        <strong>Afrânio — PE</strong>
+      </div>
+    </div>
+    <h1>Painel Administrativo</h1>
+    <p>Faça login para gerenciar os projetos do site.</p>
+    <form id="loginForm">
+      <div>
+        <label for="adminPassword">Senha de acesso</label>
+        <input type="password" id="adminPassword" placeholder="Digite sua senha" autocomplete="current-password" required />
+      </div>
+      <div id="loginError" class="error-msg"></div>
+      <button type="submit" class="btn btn-green">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        Entrar
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ── ADMIN PANEL ── -->
+<div id="adminSection">
+  <div class="admin-topbar">
+    <div class="topbar-logo">
+      <img src="logo.png" alt="Logo" />
+      <span>Painel — SME Afrânio</span>
+    </div>
+    <button id="logoutBtn" class="btn btn-outline-gray">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      Sair
+    </button>
+  </div>
+
+  <div class="admin-body">
+    <div class="admin-header">
+      <div>
+        <h2>Gerenciar Projetos</h2>
+        <p id="projectsCount">0</p> projetos cadastrados
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-outline-gray" id="btnImport">
+          <i class="fa-solid fa-file-import"></i> Importar JSON
+        </button>
+        <button class="btn btn-outline-green" id="btnExport">
+          <i class="fa-solid fa-file-export"></i> Exportar JSON
+        </button>
+        <button class="btn btn-green" id="btnNewProject">
+          <i class="fa-solid fa-plus"></i> Novo Projeto
+        </button>
+      </div>
+    </div>
+    <input type="file" id="importInput" accept=".json" style="display:none" />
+
+    <div id="projectsList"></div>
+
+    <!-- SETTINGS -->
+    <div class="settings-section">
+      <h3><i class="fa-solid fa-lock"></i> Alterar Senha de Acesso</h3>
+      <form id="changePassForm" style="display:grid;gap:1rem;max-width:420px;">
+        <div>
+          <label for="cpCurrent">Senha atual</label>
+          <input type="password" id="cpCurrent" placeholder="Senha atual" />
+        </div>
+        <div>
+          <label for="cpNew">Nova senha</label>
+          <input type="password" id="cpNew" placeholder="Nova senha (mín. 8 caracteres)" />
+        </div>
+        <div>
+          <label for="cpConfirm">Confirmar nova senha</label>
+          <input type="password" id="cpConfirm" placeholder="Repita a nova senha" />
+        </div>
+        <div class="pass-msg" id="passMsg"></div>
+        <div>
+          <button type="submit" class="btn btn-outline-green">
+            <i class="fa-solid fa-key"></i> Salvar Nova Senha
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL PROJETO ── -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">Novo Projeto</h3>
+      <button class="modal-close" id="btnCancelModal"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form id="projectForm">
+      <div class="modal-body">
+        <div>
+          <label for="fTitulo">Título do Projeto *</label>
+          <input type="text" id="fTitulo" placeholder="Ex: Olimpíadas Escolares de Afrânio" required />
+        </div>
+        <div>
+          <label for="fDescricao">Descrição *</label>
+          <textarea id="fDescricao" placeholder="Descreva o projeto..." required></textarea>
+        </div>
+        <div>
+          <label for="fCategoria">Categoria *</label>
+          <select id="fCategoria" required>
+            <option value="">Selecione...</option>
+            <option>Pedagógico</option>
+            <option>Tecnologia</option>
+            <option>Inclusão</option>
+            <option>Esporte</option>
+            <option>Cultura</option>
+            <option>Social</option>
+            <option>Infraestrutura</option>
+          </select>
+        </div>
+        <div>
+          <label for="fIcone">Classe do Ícone (Font Awesome) *</label>
+          <div class="icon-field-wrap">
+            <input type="text" id="fIcone" placeholder="fa-solid fa-flask" required />
+            <div class="icon-preview-box">
+              <i id="iconPreview" class="fa-solid fa-circle-question"></i>
+            </div>
+          </div>
+          <p class="icon-hint">
+            Pesquise ícones em <a href="https://fontawesome.com/icons" target="_blank" rel="noopener">fontawesome.com/icons</a>
+            e cole a classe aqui. Ex: <code>fa-solid fa-book-open</code>
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-gray" id="btnCancelModal2" onclick="document.getElementById('btnCancelModal').click()">Cancelar</button>
+        <button type="submit" class="btn btn-green">
+          <i class="fa-solid fa-floppy-disk"></i> Salvar Projeto
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

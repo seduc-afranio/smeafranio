@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secretaria Municipal de Educação — Afrânio PE</title>
+  <meta name="description" content="Secretaria Municipal de Educação de Afrânio – Construindo um futuro melhor através da educação de qualidade, inclusão e valorização dos educadores." />
+  <meta name="theme-color" content="#009933" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Secretaria Municipal de Educação — Afrânio PE" />
+  <meta property="og:description" content="Educação que transforma vidas." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ════════════════════════════ HEADER ════════════════════════════ -->
+<header id="header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="#inicio" class="nav-logo" aria-label="Início">
+        <img src="logo.png" alt="Prefeitura de Afrânio" />
+        <div class="nav-logo-text">
+          <span>Afrânio — PE</span>
+          <span>Secretaria de Educação</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#inicio"    class="active">Início</a></li>
+        <li><a href="#secretario">Secretário</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <button class="nav-menu-btn" id="menuBtn" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<div class="nav-overlay" id="navOverlay"></div>
+<nav class="nav-mobile" id="navMobile">
+  <a href="#inicio">Início</a>
+  <a href="#secretario">Secretário</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#equipe">Equipe</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+
+<!-- ════════════════════════════ HERO ════════════════════════════ -->
+<section id="inicio">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fa-solid fa-graduation-cap"></i>
+      Município de Afrânio — Pernambuco
+    </div>
+
+    <h1 class="hero-title">
+      Secretaria Municipal<br />de <span>Educação</span>
+    </h1>
+
+    <p class="hero-desc">
+      Construindo um futuro melhor para Afrânio através da educação de qualidade,
+      inclusão e valorização dos nossos educadores e estudantes.
+    </p>
+
+    <blockquote class="hero-quote">
+      <i class="fa-solid fa-quote-left"></i>
+      Educação que transforma vidas
+    </blockquote>
+
+    <div class="hero-buttons">
+      <a href="#projetos" class="btn btn-primary">
+        <i class="fa-solid fa-rocket"></i>
+        Ver Projetos
+      </a>
+      <a href="#contato" class="btn btn-outline">
+        <i class="fa-solid fa-envelope"></i>
+        Entre em Contato
+      </a>
+    </div>
+
+    <!-- STATS -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num"><span data-target="12">0</span><em>+</em></span>
+        <span class="hero-stat-label">Projetos Ativos</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num"><span data-target="1200">0</span><em>+</em></span>
+        <span class="hero-stat-label">Alunos Atendidos</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num"><span data-target="80">0</span><em>+</em></span>
+        <span class="hero-stat-label">Educadores</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave -->
+  <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none"
+       style="position:absolute;bottom:0;left:0;right:0;z-index:1;">
+    <path fill="#f0fdf4" d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/>
+  </svg>
+</section>
+
+
+<!-- ════════════════════════════ SECRETÁRIO ════════════════════════════ -->
+<section id="secretario">
+  <div class="container">
+    <div class="secretary-inner">
+
+      <!-- Foto -->
+      <div class="secretary-photo-wrap fade-up">
+        <div class="secretary-photo">
+          <img src="foto-secretario.jpg" alt="Secretário Ricardo Araújo"
+               onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><i class=\'fa-solid fa-user\' style=\'font-size:4rem;color:var(--green-400)\'></i><p>Foto do Secretário</p></div>'" />
+        </div>
+        <div class="secretary-badge-wrap">
+          <strong>2026</strong>
+          <span>Gestão</span>
+        </div>
+      </div>
+
+      <!-- Texto -->
+      <div class="secretary-text fade-up">
+        <span class="section-tag">
+          <i class="fa-solid fa-user-tie"></i>&nbsp; Secretário de Educação
+        </span>
+        <h2 class="section-title">Ricardo Araújo</h2>
+
+        <blockquote class="secretary-quote">
+          "Educar é mais do que transmitir conteúdo; é criar possibilidades para que
+          cada aluno descubra o seu próprio potencial."
+        </blockquote>
+
+        <p class="secretary-bio">
+          Comprometido com o desenvolvimento educacional do município de Afrânio, o
+          Secretário Ricardo Araújo lidera iniciativas transformadoras que impactam
+          positivamente a vida de centenas de estudantes e famílias em toda a região.
+        </p>
+
+        <div class="secretary-stats">
+          <div class="sec-stat">
+            <span class="sec-stat-num" data-target="14">0</span>
+            <span class="sec-stat-label">Escolas Municipais</span>
+          </div>
+          <div class="sec-stat">
+            <span class="sec-stat-num" data-target="12">0</span>
+            <span class="sec-stat-label">Projetos Iniciados</span>
+          </div>
+          <div class="sec-stat">
+            <span class="sec-stat-num" data-target="85">0</span>
+            <span class="sec-stat-label">Bolsas Concedidas</span>
+          </div>
+          <div class="sec-stat">
+            <span class="sec-stat-num" data-target="48">0</span>
+            <span class="sec-stat-label">Turmas Atendidas</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════ PROJETOS ════════════════════════════ -->
+<section id="projetos">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">
+        <i class="fa-solid fa-diagram-project"></i>&nbsp; Iniciativas
+      </span>
+      <h2 class="section-title">Nossos Projetos</h2>
+      <p class="section-subtitle">
+        Conheça as iniciativas que estão transformando a educação em Afrânio.
+      </p>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Preenchido pelo JS -->
+      <div class="projects-loading" style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--gray-500);">
+        <i class="fa-solid fa-spinner fa-spin" style="font-size:2rem;display:block;margin-bottom:1rem;"></i>
+        Carregando projetos...
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════ EQUIPE ════════════════════════════ -->
+<section id="equipe">
+  <div class="container">
+    <div class="section-header fade-up" style="margin-bottom:2.5rem;">
+      <span class="section-tag">
+        <i class="fa-solid fa-people-group"></i>&nbsp; Colaboradores
+      </span>
+      <h2 class="section-title">Nossa Equipe</h2>
+      <p class="section-subtitle">
+        Profissionais dedicados a transformar a educação no município — Ano 2026.
+      </p>
+    </div>
+
+    <div class="departments-grid">
+
+      <!-- SECRETARIA -->
+      <div class="dept-card fade-up">
+        <div class="dept-header">
+          <i class="fa-solid fa-building dept-icon"></i>
+          <span class="dept-name">Equipe de Secretaria</span>
+        </div>
+        <div class="dept-body">
+          <div class="dept-member">
+            <span class="member-role">Secretário de Educação</span>
+            <span class="member-name">Ricardo de Araújo Rodrigues</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Recepção</span>
+            <span class="member-name">Antônia / Giseliane / Marizete</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Motoristas</span>
+            <span class="member-name">Hélio Ferreira / Marcones / Zerisvaldo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRESTAÇÃO DE CONTAS -->
+      <div class="dept-card fade-up">
+        <div class="dept-header">
+          <i class="fa-solid fa-file-invoice dept-icon"></i>
+          <span class="dept-name">Prestação de Contas</span>
+        </div>
+        <div class="dept-body">
+          <div class="dept-member">
+            <span class="member-role">Técnico Responsável</span>
+            <span class="member-name">Andreza Macedo</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Assessoria Técnica</span>
+            <span class="member-name">Fátima Coelho</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Assessoria Técnica</span>
+            <span class="member-name">Franciely</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSPEÇÃO/NORMATIZAÇÃO -->
+      <div class="dept-card fade-up">
+        <div class="dept-header">
+          <i class="fa-solid fa-clipboard-check dept-icon"></i>
+          <span class="dept-name">Inspeção / Normatização</span>
+        </div>
+        <div class="dept-body">
+          <div class="dept-member">
+            <span class="member-role">Coordenadora</span>
+            <span class="member-name">Rita de Cássia Arruda</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Técnico Diário Eletrônico</span>
+            <span class="member-name">Hebert Lucas</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Técnica</span>
+            <span class="member-name">Lindete Porto</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Técnica</span>
+            <span class="member-name">Risomária Arruda</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Técnica</span>
+            <span class="member-name">Luciana Amorim</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALMOXARIFADO -->
+      <div class="dept-card fade-up">
+        <div class="dept-header">
+          <i class="fa-solid fa-boxes-stacked dept-icon"></i>
+          <span class="dept-name">Almoxarifado</span>
+        </div>
+        <div class="dept-body">
+          <div class="dept-member">
+            <span class="member-role">Coordenador</span>
+            <span class="member-name">Gleniston</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Técnico</span>
+            <span class="member-name">Gisléia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MERENDA / MATERIAL DIDÁTICO -->
+      <div class="dept-card fade-up">
+        <div class="dept-header">
+          <i class="fa-solid fa-utensils dept-icon"></i>
+          <span class="dept-name">Merenda Escolar / Material Didático</span>
+        </div>
+        <div class="dept-body">
+          <div class="dept-member">
+            <span class="member-role">Coordenadora</span>
+            <span class="member-name">Auxiliadora</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Nutricionista</span>
+            <span class="member-name">Camila Lima</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Motorista</span>
+            <span class="member-name">Jean</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Distribuidor</span>
+            <span class="member-name">Gercino</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRANSPORTE -->
+      <div class="dept-card fade-up">
+        <div class="dept-header">
+          <i class="fa-solid fa-bus dept-icon"></i>
+          <span class="dept-name">Departamento de Transporte</span>
+        </div>
+        <div class="dept-body">
+          <div class="dept-member">
+            <span class="member-role">Coordenador</span>
+            <span class="member-name">João</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Apoio Técnico</span>
+            <span class="member-name">Beth Meire</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Apoio Técnico</span>
+            <span class="member-name">Luís Henrique</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- POLO UAB -->
+      <div class="dept-card fade-up">
+        <div class="dept-header">
+          <i class="fa-solid fa-building-columns dept-icon"></i>
+          <span class="dept-name">Polo UAB</span>
+        </div>
+        <div class="dept-body">
+          <div class="dept-member">
+            <span class="member-role">Coordenadora</span>
+            <span class="member-name">Denise Santiago</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Secretária</span>
+            <span class="member-name">Aparecida</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Secretária</span>
+            <span class="member-name">Jane Vasconcelos</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Vigilantes</span>
+            <span class="member-name">Francisco / Gaudileide / Andréa / Cícero</span>
+          </div>
+          <div class="dept-member">
+            <span class="member-role">Aux. Serviços Gerais</span>
+            <span class="member-name">Dieja</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EQUIPE DE ENSINO -->
+      <div class="dept-card fade-up" style="grid-column: 1 / -1;">
+        <div class="dept-header">
+          <i class="fa-solid fa-chalkboard-user dept-icon"></i>
+          <span class="dept-name">Equipe de Ensino</span>
+        </div>
+        <div class="dept-body" style="columns:2;column-gap:2rem;">
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Gerente de Ensino</span>
+            <span class="member-name">Janaynna Lopes</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Melhoria de Gestão</span>
+            <span class="member-name">Auristela</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Pedagógica Anos Iniciais / Coord. PCA</span>
+            <span class="member-name">Susana Araújo</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Pedagógica Ed. Infantil / Formadora PCA</span>
+            <span class="member-name">Vanúsia Pereira</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Pedagógica Ed. Infantil / Formadora PCA</span>
+            <span class="member-name">Ilza</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Anos Iniciais 1º e 2º / Formadora PCA</span>
+            <span class="member-name">Lindete Vieira / Josenilda</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Anos Iniciais 3º ao 5º / Formadora PCA</span>
+            <span class="member-name">Denise Santiago / Patrícia Lucas</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Pedagógica Quilombola</span>
+            <span class="member-name">Andréa</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Anos Finais — Língua Port. / Arte / Inglês</span>
+            <span class="member-name">Susana Araújo</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Anos Finais — Geografia / Religião / Hist.</span>
+            <span class="member-name">Valdirene</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Anos Finais — Matemática / Ed. Física</span>
+            <span class="member-name">Giseliane</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Anos Finais — Ciências</span>
+            <span class="member-name">Janaynna Lopes</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coordenadora EJA</span>
+            <span class="member-name">Elaine Cavalcanti</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">Coord. Frequência / Bolsa Família</span>
+            <span class="member-name">Carlúcia Macedo</span>
+          </div>
+          <div class="dept-member" style="break-inside:avoid">
+            <span class="member-role">DPIS</span>
+            <span class="member-name">Érica / Laiane</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════ CONTATO ════════════════════════════ -->
+<section id="contato">
+  <div class="container">
+    <div class="section-header fade-up" style="margin-bottom:3rem;">
+      <span class="section-tag">
+        <i class="fa-solid fa-location-dot"></i>&nbsp; Fale Conosco
+      </span>
+      <h2 class="section-title">Entre em Contato</h2>
+      <p class="section-subtitle">
+        Estamos aqui para atender você. Venha nos visitar ou entre em contato por telefone.
+      </p>
+    </div>
+
+    <div class="contact-inner">
+      <div class="contact-info fade-up">
+
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="contact-card-body">
+            <h4>Endereço</h4>
+            <p>Rua Clementino Coelho, nº 203<br />Centro — Afrânio, PE</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="contact-card-body">
+            <h4>Telefone / WhatsApp</h4>
+            <a href="https://wa.me/5587981757728" target="_blank" rel="noopener">
+              +55 87 98175-7728
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div class="contact-card-body">
+            <h4>Horário de Atendimento</h4>
+            <p>Segunda a Sexta-feira<br />08h00 às 17h00</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MAPA -->
+      <div class="contact-map fade-up">
+        <iframe
+          title="Localização da Secretaria Municipal de Educação de Afrânio"
+          src="https://maps.google.com/maps?q=Rua+Clementino+Coelho+203+Centro+Afranio+PE+Brasil&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════ FOOTER ════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Prefeitura de Afrânio" />
+        <p>
+          A Secretaria Municipal de Educação de Afrânio trabalha diariamente
+          pelo desenvolvimento educacional do município, garantindo acesso,
+          qualidade e inclusão para todos.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#secretario">Secretário</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Informações</h5>
+        <ul>
+          <li><a href="https://wa.me/5587981757728" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="#contato">Localização</a></li>
+          <li><a href="admin.html">Área Restrita</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Secretaria Municipal de Educação — Afrânio, PE. Todos os direitos reservados.</span>
+      <a href="admin.html">
+        <i class="fa-solid fa-lock"></i> Admin
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
