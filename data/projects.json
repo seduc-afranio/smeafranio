@@ -33,12 +33,5 @@
     "descricao": "Celebração da cultura local com apresentações artísticas, exposições e mostras culturais produzidas pelos alunos.",
     "categoria": "Cultura",
     "icone": "fa-solid fa-masks-theater"
-  },
-  {
-    "id": 6,
-    "titulo": "Teste do Lucas",
-    "descricao": "Teste do Chapa",
-    "categoria": "Pedagógico",
-    "icone": "fa-solid"
   }
 ]
